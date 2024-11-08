@@ -28,7 +28,7 @@ public class FakeStoreProductService implements ProductService {
     public Product getSingleProduct(Long productID) throws ProductNotFoundException {
         ResponseEntity<FakeStoreProductDTO> fakeStoreProductResponse = restTemplate.getForEntity("https://fakestoreapi.com/products/" + productID, FakeStoreProductDTO.class);
         if(fakeStoreProductResponse.getStatusCode()!= HttpStatusCode.valueOf(200)){
-            //do something
+            System.out.println("Yipee hurray!");
         }
 //        fakeStoreProductResponse.getHeaders();
         FakeStoreProductDTO fakeStoreProduct = fakeStoreProductResponse.getBody();
