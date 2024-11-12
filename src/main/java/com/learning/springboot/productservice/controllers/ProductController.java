@@ -54,12 +54,5 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-    //Deal with product not found exception
-    @ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<ErrorDTO> handleProductNotFoundException(ProductNotFoundException exception){
-        ErrorDTO errorDTO = new ErrorDTO();
-        errorDTO.setMessage(exception.getMessage());
 
-        return new ResponseEntity<ErrorDTO>(errorDTO, HttpStatus.NOT_FOUND);
-    }
 }
